@@ -1,4 +1,4 @@
-angular
+var app = angular
   .module('kanbanApp', [
     'ui.router',
     'satellizer',
@@ -72,7 +72,7 @@ function configRoutes($stateProvider, $urlRouterProvider, $locationProvider) {
       resolve: {
         loginRequired: loginRequired
       }
-    })
+    });
 
 
     function skipIfLoggedIn($q, $auth) {
@@ -107,7 +107,7 @@ function MainController (Account) {
 
   vm.currentUser = function() {
    return Account.currentUser();
-  }
+  };
 
 }
 
@@ -142,7 +142,7 @@ function LoginController ($location, Account) {
       .then(function(){
         vm.new_user = {}; // clear sign up form
         $location.path('/profile'); // redirect to '/profile'
-      })
+      });
   };
 }
 
@@ -261,7 +261,7 @@ function Account($http, $q, $auth) {
         self.user = null;
         deferred.reject();
       }
-    )
+    );
     self.user = promise = deferred.promise;
     return promise;
 
@@ -285,5 +285,4 @@ function Account($http, $q, $auth) {
 
 
 }
-Status API Training Shop Blog About
 

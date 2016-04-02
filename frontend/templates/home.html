@@ -1,1 +1,22 @@
 <h1>This is home</h1>
+<hr>
+<p ng-if="home.goals.length === 0">No goals yet.</p>
+
+<div ng-if="home.goals.length > 0">
+	<div ng-repeat="goal in home.goals">
+		<p><strong>{{goal.title}}</strong></p><br>
+	</div>
+</div>
+
+<div ng-show="main.currentUser()">
+	<br>
+	<h4>Add New Goal</h4>
+	<hr>
+	<form ng-show="main.currentUser()" ng-submit="home.createGoal()">
+		<div class="form-group">
+			<label for="goal-title">Title</label>
+		  <input type="text" ng-model="home.new_goal.title" class="form-control" id="goal-title" placeholder="Goal Title">
+		</div>
+	  <input type="submit" value="Add Goal" class="btn btn-block btn-info">
+	</form>
+</div>
