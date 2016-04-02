@@ -11,4 +11,4 @@ var goalSchema = new Schema({
 });
 
 var Goal = mongoose.model('Goal', goalSchema);
-module.exports = goal;
+module.exports = Goal;

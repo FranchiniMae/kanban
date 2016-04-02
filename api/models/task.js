@@ -8,5 +8,5 @@ var taskSchema = new Schema({
   goal: [{ type: Schema.Types.ObjectId, ref: 'Goal'}]
 });
 
-var Goal = mongoose.model('Task', taskSchema);
-module.exports = task;
+var Task = mongoose.model('Task', taskSchema);
+module.exports = Task;
